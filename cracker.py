@@ -9,7 +9,8 @@ def print_usage() -> None:
     print("Created 2019 by Jason Turley")
     print("Github: https://github.com/JasonTurley/password-cracker")
     print()
-    print("Usage: python3 {} <PASSWORD-LIST> <USER-LIST>".format(sys.argv[0]))
+    print("Usage: python3 {} passwords credentials".format(sys.argv[0]))
+
 
 
 # Check user entered correct number of arguments
@@ -22,18 +23,26 @@ with open(sys.argv[1], "r") as password_list:
     with open(sys.argv[2], "r") as credentials:
         total_cracked = 0
 
-        for creds in credentials:
-            user, actual_password = creds.split(":")  # ["user", "password"]
+        with open("results", "w") as results_file:
+            for creds in credentials:
+                user, actual_password = creds.split(":")  # ["user", "password"]
 
-            # Execute attack
-            for password in password_list:
-                if password == actual_password:
-                    total_cracked += 1
-                    print("{}'s password is {}".format(user, password), end="")
-                    break
+                # Execute attack
+                for password in password_list:
+                    if password == actual_password:
 
-            # Reset to the beginning of password list
-            password_list.seek(0, 0)
+                        # Cracked a password! Print result to terminal and write to
+                        # a results file
+                        total_cracked += 1
+                        result = "{}'s password is {}".format(user, password)
+
+                        print(result, end="")
+                        results_file.write(result)
+
+                        break
+
+                # Reset to the beginning of password list
+                password_list.seek(0, 0)
 
         # Print results
         print()
