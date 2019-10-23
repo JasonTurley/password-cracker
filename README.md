@@ -15,7 +15,7 @@ The program needs to be supplied with a password file and user credential file i
 python3 cracker.py [PASSWORD-LIST] [CREDS-LIST]
 ```
 
-Cracked passwords are printed to the terminal.
+Cracked passwords are printed to the terminal as well to an output file labeled *results*.
 
 ## What I Learned
 + How to execute a dictionary attack
@@ -24,4 +24,3 @@ Cracked passwords are printed to the terminal.
 ### Coming soon...
 + Hash passwords before storing them
 + Allow users to register themselves in a textfile database
-+ Write cracked passwords to a file instead of printing to terminal
