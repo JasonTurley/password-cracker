@@ -1,7 +1,8 @@
 # Saltine
 Saltine is a simple password cracker built in Python. It currently can only crack plain-text passwords
-but support for hashed passwords will be later implemented. This is a fun and educational personal project that is 
-loosely inspired by [John the Ripper](https://www.openwall.com/john/). 
+but support for hashed passwords will be later implemented. This is a fun and educational personal project that is
+loosely inspired by [John the Ripper](https://www.openwall.com/john/) and
+[cheetah](https://github.com/shmilylty/cheetah).
 
 ## How to install
 Clone the repo
@@ -18,9 +19,10 @@ python3 cracker.py [PASSWORD-LIST] [CREDS-LIST]
 Cracked passwords are printed to the terminal as well to an output file labeled *results*.
 
 ## What I Learned
-+ How to execute a dictionary attack
++ How to execute a basic dictionary attack
++ Opening and closing files in Python
 + Practice writing documentation
 
 ### Coming soon...
-+ Hash passwords before storing them
-+ Allow users to register themselves in a textfile database
++ Support for hashing passwords
++ A test suite
