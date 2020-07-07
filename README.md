@@ -7,22 +7,20 @@ loosely inspired by [John the Ripper](https://www.openwall.com/john/) and
 ## How to install
 Clone the repo
 ```
-git clone https://github.com/JasonTurley/password-cracker
+git clone https://github.com/JasonTurley/saltine
 ```
 
-## How to use
-The program needs to be supplied with a password file and user credential file in order run.
+## How to run
+Execute the program with a list of passwords to crack and a word list. 
 ```
-python3 cracker.py [PASSWORD-LIST] [CREDS-LIST]
+python3 saltine.py <hashed-passwords> <wordlist>
 ```
 
-Cracked passwords are printed to the terminal as well to an output file labeled *results*.
 
 ## What I Learned
-+ How to execute a basic dictionary attack
-+ Opening and closing files in Python
-+ Practice writing documentation
++ How to implement a basic dictionary style password cracking attack
++ How to hash plaintext in python
++ How to open and close files in python
 
 ### Coming soon...
-+ Support for hashing passwords
-+ A test suite
++ More cracking options than just SHA-256
